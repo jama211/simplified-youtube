@@ -10,6 +10,7 @@ const FileUpload = () => {
     const [videoTitle, setVideoTitle] = useState('');
     const [uploadedFile, setUploadedFile] = useState({});
     const [uploadPercentage, setUploadPercentage] = useState(0);
+    const [hasUploadedFile, setHasUploadedFile] = useState(false);
 
     function onChange(e){
         setFile(e.target.files[0]);
@@ -39,6 +40,7 @@ const FileUpload = () => {
             });
 
             setUploadedFile(res.data);
+            setHasUploadedFile(true);
         }
         catch(err){
             if(err.response.status === 500){
@@ -73,7 +75,7 @@ const FileUpload = () => {
                 <input type="submit" value="Upload" />
             </form>
 
-            {uploadPercentage > 99 ? <div><h3>Upload Complete!</h3><a className="btn btn-outline-secondary" href="/">Back To Home...</a></div> : null }
+            {hasUploadedFile ? <div><h3>Upload Complete!</h3><a className="btn btn-outline-secondary" href="/">Back To Home...</a></div> : null }
 
             
         </div>
