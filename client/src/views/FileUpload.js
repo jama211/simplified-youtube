@@ -65,7 +65,7 @@ const FileUpload = () => {
                 
                 <div>
                     <div className="custom-file">
-                        <input type="file" className="custom-file-input" id="fileUpload" onChange={onChange} />
+                        <input type="file" accept="video/*" className="custom-file-input" id="fileUpload" onChange={onChange} />
                         <label className="custom-file-label" htmlFor="fileUpload">{fileName}</label>
                     </div>
                 </div>
