@@ -1,0 +1,28 @@
+{
+  "videoList": [
+    {
+      "id": 0,
+      "path": "/uploads/DoubleFencing.mp4",
+      "name": "DoubleFencing.mp4",
+      "title": "Double Fencing"
+    },
+    {
+      "id": 1,
+      "path": "/uploads/DoubleSmashball.mp4",
+      "name": "DoubleSmashball.mp4",
+      "title": "Double Smashball"
+    },
+    {
+      "id": 2,
+      "path": "/uploads/DoubleVolleyball.mp4",
+      "name": "DoubleVolleyball.mp4",
+      "title": "Double Volleyball"
+    },
+    {
+      "id": 3,
+      "path": "/uploads/DoubleWrestling.mp4",
+      "name": "DoubleWrestling.mp4",
+      "title": "Double Wrestling"
+    }
+  ]
+}
