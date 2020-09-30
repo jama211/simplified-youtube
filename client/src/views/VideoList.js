@@ -43,7 +43,7 @@ export default class VideoList extends Component {
 
                     <div className="row">
                         {this.state.uploadedVideos.map(video => 
-                            <div className="col-md-4 col-sl-12 videoBox" key={video.id} onClick={(e) => this.handleClick(e, video.id)}>
+                            <div className="col-md-4 col-sl-12 videoBox" data-testid="videoBox" key={video.id} onClick={(e) => this.handleClick(e, video.id)}>
                                 <div className="innerVideoBox">
                                     <p>{video.title}</p>
                                     <video muted >
@@ -51,7 +51,7 @@ export default class VideoList extends Component {
                                     </video>
                                 </div>
                             </div>
-                        )}
+                        )} 
                     </div>
                 </div>
             </div>

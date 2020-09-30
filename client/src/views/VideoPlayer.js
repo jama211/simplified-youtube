@@ -33,7 +33,7 @@ export default class VideoPlayer extends Component {
         if(this.state.videoToWatch){
             video = 
             (
-                <video controls autoPlay key={this.state.videoToWatch.id}>
+                <video controls autoPlay key={this.state.videoToWatch.id} data-testid="videoElement">
                     <source src={this.state.videoToWatch.path} type="video/mp4" />
                 </video>
             );
