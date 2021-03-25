@@ -8,7 +8,7 @@ const FileUpload = () => {
     const [file, setFile] = useState("");
     const [fileName, setFileName] = useState('Choose a file...');
     const [videoTitle, setVideoTitle] = useState('');
-    const [uploadedFile, setUploadedFile] = useState({});
+    const [setUploadedFile] = useState({});
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [hasUploadedFile, setHasUploadedFile] = useState(false);
 

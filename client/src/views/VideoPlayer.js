@@ -1,4 +1,3 @@
-import { dirname } from 'path';
 import React, { Component } from 'react';
 
 const path = require('path');

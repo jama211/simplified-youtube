@@ -4,11 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serverDev": "nodemon server.js",
-    "server": "node server.js",
+    "serverDev": "tsc ; nodemon built/server.js",
+    "server": "tsc ; node built/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run serverDev\" \"npm run client\"",
-    "start": "concurrently \"npm run server\" \"npm run client\""
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +20,11 @@
     "express-fileupload": "^1.2.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/express-fileupload": "^1.1.6",
+    "@types/node": "^14.14.35",
     "concurrently": "^5.3.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "typescript": "^4.2.3"
   }
 }
