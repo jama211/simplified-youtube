@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import './App.css';
+import './styles/App.css';
 import FileUpload from './views/FileUpload';
 import VideoList from './views/VideoList';
 import VideoPlayer from './views/VideoPlayer';

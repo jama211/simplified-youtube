@@ -4,12 +4,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "serverDev": "tsc ; nodemon built/server.js",
-    "server": "tsc ; node built/server.js",
+    "serverDev": "tsc && nodemon built/server.js",
+    "server": "tsc && node built/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run serverDev\" \"npm run client\"",
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "tsc"
+    "build": "tsc && cd client ; yarn build",
+    "postinstall": "cd client && yarn"
   },
   "keywords": [],
   "author": "",
