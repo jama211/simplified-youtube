@@ -8,7 +8,7 @@ const FileUpload = () => {
     const [file, setFile] = useState("");
     const [fileName, setFileName] = useState('Choose a file...');
     const [videoTitle, setVideoTitle] = useState('');
-    const [setUploadedFile] = useState({});
+    const [uploadedFile, setUploadedFile] = useState({});
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [hasUploadedFile, setHasUploadedFile] = useState(false);
 
@@ -39,16 +39,30 @@ const FileUpload = () => {
                 }
             });
 
+            if(uploadedFile){
+              console.log(JSON.stringify(uploadedFile));
+            }
+
             setUploadedFile(res.data);
             setHasUploadedFile(true);
         }
         catch(err){
+          if(err && err.response && err.response.status){
             if(err.response.status === 500){
-                console.log("Upload failed...");
+                console.error("Upload failed...");
             }
             else{
-                console.log(err.response.data.msg);
+                console.error(err.response.data.msg);
             }
+          }
+          else{
+            if(err){
+              console.error(JSON.stringify(err));
+            }
+            else{
+              console.error("No error object???");
+            }
+          }
         }
     }
 
