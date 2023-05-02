@@ -16,7 +16,7 @@ export default class VideoList extends Component {
     async componentDidMount() {
         try {
             // Retrieve the video list from the server and update our list in state 
-            const response = await fetch('http://' + window.location.hostname + ':5000/videoList');
+            const response = await fetch('http://' + window.location.hostname + ':3001/videoList');
             const data = await response.json();
 
             this.setState({ uploadedVideos: [...data.videoList] });

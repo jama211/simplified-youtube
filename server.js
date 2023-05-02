@@ -62,4 +62,4 @@ server.get('/videoList', (req, res) => {
 });
 
 // Start the server... 
-server.listen(5000, () => console.log('Video Data Management Server Started...'));
+server.listen(3001, () => console.log('Video Data Management Server Started...'));

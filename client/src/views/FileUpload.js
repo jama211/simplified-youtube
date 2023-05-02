@@ -8,7 +8,6 @@ const FileUpload = () => {
     const [file, setFile] = useState("");
     const [fileName, setFileName] = useState('Choose a file...');
     const [videoTitle, setVideoTitle] = useState('');
-    const [uploadedFile, setUploadedFile] = useState({});
     const [uploadPercentage, setUploadPercentage] = useState(0);
     const [hasUploadedFile, setHasUploadedFile] = useState(false);
 
@@ -29,7 +28,7 @@ const FileUpload = () => {
 
         try{
             // Attempt to upload the file... 
-            const res = await axios.post('/upload', formData, {
+            await axios.post('/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }, 
@@ -39,7 +38,6 @@ const FileUpload = () => {
                 }
             });
 
-            setUploadedFile(res.data);
             setHasUploadedFile(true);
         }
         catch(err){

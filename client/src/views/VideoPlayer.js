@@ -1,4 +1,3 @@
-import { dirname } from 'path';
 import React, { Component } from 'react';
 
 const path = require('path');
@@ -17,7 +16,7 @@ export default class VideoPlayer extends Component {
 
     async componentDidMount() {
         try {
-            const response = await fetch('http://' + window.location.hostname + ':5000/watch/' + urlBasename);
+            const response = await fetch('http://' + window.location.hostname + ':3001/watch/' + urlBasename);
             const data = await response.json();
 
             this.setState({ videoToWatch: data });

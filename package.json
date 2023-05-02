@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "install": "yarn --cwd client/",
     "serverDev": "nodemon server.js",
     "server": "node server.js",
     "client": "npm start --prefix client",
