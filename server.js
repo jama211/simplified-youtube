@@ -19,8 +19,10 @@ server.post('/upload', (req, res) => {
     // Retrieve the file object from the request 
     const newFile = req.files.file;
 
+    const parsedFileName = newFile.name.replaceAll(' ', '');
+
     // Store the new file in the uploads folder 
-    newFile.mv(`${__dirname}/client/public/uploads/${newFile.name}`, err => {
+    newFile.mv(`${__dirname}/client/public/uploads/${parsedFileName}`, err => {
 
         // If there was an error saving the file, log it and send status 500 (internal server error)
         if(err){
@@ -33,7 +35,7 @@ server.post('/upload', (req, res) => {
 
         let newVideo = {
             id: currentData.videoList.length,
-            path: `/uploads/${newFile.name}`,
+            path: `/uploads/${parsedFileName}`,
             name: `${newFile.name}`,
             title: `${req.body.videoTitle}`
         }
@@ -45,7 +47,7 @@ server.post('/upload', (req, res) => {
         });
 
         // Return info of the file's name and location now that it's uploaded
-        res.json({ fileName: newFile.name, filePath: `/uploads/${newFile.name}` });
+        res.json({ fileName: newFile.name, filePath: `/uploads/${parsedFileName}` });
     });
 });
 
